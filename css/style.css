@@ -1,0 +1,27 @@
+.b-nav {
+    margin: 20px 0;
+}
+.b-alert {
+    margin: 20px 0;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+.ng-invalid.ng-dirty {
+    border-color: red;
+}
+.ng-valid.ng-dirty {
+    border-color: green;
+}
+.form-control {
+    margin-bottom: 10px;
+}
+textarea {
+    resize: none;
+}
+.b-form, blockquote {
+    margin-top: 10px;
+}
+.ng-touched.ng-invalid {
+    border-color: #ccc;
+}
