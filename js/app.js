@@ -55,7 +55,7 @@
 
                 $scope.addNewComment = function(comment){
                     $scope.comments.push(comment);
-                    this.comment.time = Date.now();
+                    $scope.comment.time = Date.now();
                     $scope.comment = {};
                 };
 
