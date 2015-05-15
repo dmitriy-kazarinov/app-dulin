@@ -70,5 +70,21 @@
                     });
                 }
             };
-        }]);
+        }])
+        .directive('fillBlock', function(){
+
+            return {
+                link: function($scope, element, attributes){
+                    $scope.text = 'some text';
+                    console.log(attributes.pluginOption);
+                    $scope.$watch('text', function(oneValue, twoValue) {
+                        if(oneValue === ''){
+                            console.log('empty input');
+                            $(element).hide();
+                        }
+                    });
+                },
+                restrict: 'A'
+            }
+        });
 })();
