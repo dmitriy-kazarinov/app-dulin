@@ -12,13 +12,14 @@
                     url: '/home',
                     templateUrl: '/pages/home.html'
                 })
-                    .state('home.music', {
-                        url: '/music',
-                        template: '<div class="b-alert alert alert-success">Мы на вложенной странице music</div>'
+                    .state('home.directive', {
+                        url: '/directive',
+                        templateUrl: '/pages/custom-directive.html'
                     })
-                    .state('home.video', {
-                        url: '/video',
-                        template: '<div class="b-alert alert alert-info">Мы на вложенной странице video</div>'
+                    .state('home.test', {
+                        url: '/test',
+                        templateUrl: '/pages/test.html',
+                        controller: 'testCtrl'
                     })
                     .state('home.news', {
                         url: '/news',
@@ -32,7 +33,7 @@
                         'columnText@comment': { template: '<div class="well">Страница с разным представлением</div>' },
                         'columnComment@comment': {
                             templateUrl: '/pages/comment-table.html',
-                            controller: 'commentTable'
+                            controller: 'commentCtrl'
                         }
                     }
                 });
@@ -43,7 +44,7 @@
             //    });
 
         }])
-        .controller('commentTable',['$scope', 'allComment',
+        .controller('commentCtrl',['$scope', 'allComment',
             function($scope, allComment){
 
                 $scope.comments = [];
@@ -61,6 +62,36 @@
 
             }
         ])
+
+        .controller('testCtrl', ['$scope', function($scope){
+            $scope.formTest = {};
+            $scope.formDone = [];
+            $scope.result = function(obj){
+                console.log(obj);
+
+                //true questions
+                if(obj.question1 === '4'){
+                    $scope.formDone.push({'question1': true});
+                };
+                if(obj.question2 === '7'){
+                    $scope.formDone.push({'question2': true});
+                };
+                if(obj.question3 === 'Дима'){
+                    $scope.formDone.push({'question3': true});
+                };
+                console.log($scope.formDone);
+
+                //result done
+                var done = $scope.formDone.length;
+                if(done >= 3){
+                    alert('Молодец');
+                } else if (done < 3) {
+                    alert('Плохо');
+                }
+
+                $scope.formDone = [];
+            }
+        }])
 
         .factory('allComment', ['$http', function($http){
             return{

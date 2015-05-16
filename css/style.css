@@ -1,3 +1,4 @@
+@import "reset.css";
 .b-nav {
     margin: 20px 0;
 }
@@ -24,4 +25,10 @@ textarea {
 }
 .ng-touched.ng-invalid {
     border-color: #ccc;
+}
+.b-custom-directive {
+    margin: 20px 0;
+}
+.b-attention {
+    margin-top: 20px;
 }
