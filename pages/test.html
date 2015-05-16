@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="b-english-test">
+            <h2>Test!</h2>
+
+            <form name="testForm">
+
+                <ul class="b-question">
+                    <li class="b-question__item">
+                        <p>2+2={{formTest.question1}}</p>
+                        <label><input name="question1" type="radio" class="" ng-model="formTest.question1" value="1" required><span>1</span></label><br/>
+                        <label><input name="question1" type="radio" class="" ng-model="formTest.question1" value="2" required><span>2</span></label><br/>
+                        <label><input name="question1" type="radio" class="" ng-model="formTest.question1" value="3" required><span>3</span></label><br/>
+                        <label><input name="question1" type="radio" class="" ng-model="formTest.question1" value="4" required><span>4</span></label>
+                    </li>
+                    <li class="b-question__item">
+                        <p>5+2={{formTest.question2}}</p>
+                        <label><input name="question2" type="radio" class="" ng-model="formTest.question2" value="1" required><span>1</span></label><br/>
+                        <label><input name="question2" type="radio" class="" ng-model="formTest.question2" value="2" required><span>2</span></label><br/>
+                        <label><input name="question2" type="radio" class="" ng-model="formTest.question2" value="7" required><span>7</span></label><br/>
+                        <label><input name="question2" type="radio" class="" ng-model="formTest.question2" value="4" required><span>4</span></label>
+                    </li>
+                    <li class="b-question__item">
+                        <p>Меня зовут {{formTest.question3}}</p>
+                        <label><input name="question3" type="radio" class="" ng-model="formTest.question3" value="Дима" required><span>Дима</span></label><br/>
+                        <label><input name="question3" type="radio" class="" ng-model="formTest.question3" value="Олег" required><span>Олег</span></label><br/>
+                        <label><input name="question3" type="radio" class="" ng-model="formTest.question3" value="Вова" required><span>Вова</span></label>
+                    </li>
+                    <li class="b-question__submit">
+
+                        <button class="btn btn-default" ng-disabled="testForm.$invalid" ng-click="result(formTest)">Узнать результат</button>
+                        <p class="b-attention alert alert-warning" ng-hide="testForm.$valid">Для просмотра результатов, необходимо ответить на все вопросы</p>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
+    </div>
+</div>
