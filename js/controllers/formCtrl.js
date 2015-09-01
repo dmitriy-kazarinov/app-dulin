@@ -9,7 +9,9 @@ appDulin.controller('formCtrl', ['$scope', function($scope){
 
         //true questions
         if(obj.question1 === '4'){
-            $scope.formDone.push({'question1': true});
+            alert('Good!')
+        }else{
+            alert('Bad, try more')
         };
 
         $scope.formDone = [];

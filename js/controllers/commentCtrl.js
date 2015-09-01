@@ -9,7 +9,7 @@ appDulin.controller('commentCtrl',['$scope', 'allComment',
         allComment.get(function(data){
             $scope.comments = data;
         });
-        
+
         $scope.addNewComment = function(comment){
             $scope.comments.push(comment);
             $scope.comment.time = Date.now();

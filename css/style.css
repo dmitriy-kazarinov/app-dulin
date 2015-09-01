@@ -32,3 +32,22 @@ textarea {
 .b-attention {
     margin-top: 20px;
 }
+h1 {
+    margin-bottom: 10px;
+}
+.b-invoice-calendar i.glyphicon-calendar {
+    position: absolute;
+    right: 22px;
+    top: 9px;
+}
+.b-invoice-calendar .datepicker {
+    width: 300px;
+    padding: 10px;
+}
+table.table {
+    border: 1px solid #DDD;
+}
+.nav__item {
+    color: rgb(218, 194, 83);
+    margin-top: 17px;
+}

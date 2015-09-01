@@ -10,20 +10,20 @@ appDulin.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', fu
                 url: '/home',
                 templateUrl: '/pages/home.html'
             })
-            .state('home.directive', {
-                url: '/directive',
-                templateUrl: '/pages/comment-list.html',
-                controller: 'commentCtrl'
-            })
-            .state('home.form', {
-                url: '/form',
-                templateUrl: '/pages/test.html',
-                controller: 'formCtrl'
-            })
-            .state('home.news', {
-                url: '/news',
-                template: '<div class="b-alert alert alert-warning">Мы на вложенной странице news</div>'
-            })
+                .state('home.directive', {
+                    url: '/directive',
+                    templateUrl: '/pages/comment-list.html',
+                    controller: 'commentCtrl'
+                })
+                .state('home.form', {
+                    url: '/form',
+                    templateUrl: '/pages/test.html',
+                    controller: 'formCtrl'
+                })
+                .state('home.news', {
+                    url: '/news',
+                    template: '<div class="b-alert alert alert-warning">Мы на вложенной странице news</div>'
+                })
 
             .state('comment', {
                 url: '/comment',
@@ -35,6 +35,11 @@ appDulin.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', fu
                         controller: 'commentCtrl'
                     }
                 }
+            })
+            .state('invoice', {
+                url: '/invoice',
+                templateUrl: '/pages/invoice.html',
+                controller: 'invoiceCtrl'
             });
         //$locationProvider
         //    .html5Mode({
