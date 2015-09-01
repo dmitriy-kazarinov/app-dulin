@@ -1,4 +1,4 @@
-var appDulin = angular.module('appDulin',['ui.router']);
+var appDulin = angular.module('appDulin',['ui.router','ngAnimate', 'mgcrea.ngStrap']);
 
 
 

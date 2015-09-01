@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Выставление счета контрагенту</h1>
+        <p>Укажите параметры платежа, адрес контрагента, комментарий. Вашему<br/>
+            контрагенту будет отправлено сформированное платежное поручение.</p>
+        <br />
+        <form name="invoiceForm">
+            <div class="row">
+                <div class="well col-md-6">
+                    <div class="row">
+                        <div class="col-md-8"><input type="text" class="form-control" ng-model="agentInfo.costs" placeholder="Счет №"/></div>
+                        <div class="col-md-4 b-invoice-calendar"><input type="text" ng-model="agentInfo.date" name="date" bs-datepicker class="form-control"/><i class="glyphicon glyphicon-calendar"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!--<input type="text" class="form-control" ng-model="selectedState" bs-options="state for state in states" placeholder="Enter state" bs-typeahead>-->
+                            <input type="text" class="form-control" ng-model="agentInfo.name" bs-options="agent.name for agent in invoiceAll.agents" placeholder="Контрагент" bs-typeahead>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <select class="form-control" ng-model="agentInfo.cost" >
+                                <option value="" selected>Счет начисления средств</option>
+                                <option ng-repeat="agent in invoiceAll.agents" value="{{agent.costMeans}}">
+                                    Текущий {{agent.name}} {{agent.costMeans}} р.
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="agentInfo.tax">
+                                <option value="" selected>Выбирете НДС</option>
+                                <option ng-repeat="agent in invoiceAll.agents" value="{{agent.tax}}">
+                                    +НДС {{agent.tax.percentage}} %
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <td>Название товара или услуги</td>
+                    <td>Кол-во</td>
+                    <td>Цена, Р</td>
+                    <td>Сумма, Р</td>
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="service in invoiceAll.services">
+                    <td>{{service.name}}</td>
+                    <td><input type="number" ng-model="service.quantity" class="form-control"/></td>
+                    <td><input type="number" ng-model="service.price" class="form-control"/></td>
+                    <td>{{(service.quantity * service.price | number:2) + " P"}}</td>
+                    <td>
+                        <button ng-click="removeService($index)" class="btn btn-danger btn-xs">x</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="text" ng-model="servicInfo.name" class="form-control" placeholder="Укажите название товара или услуги"/></td>
+                    <td><input type="number" ng-model="servicInfo.quantity" class="form-control" placeholder="1"/></td>
+                    <td><input type="number" ng-model="servicInfo.price" class="form-control" placeholder="0,00"/></td>
+                    <td></td>
+                    <td>
+                        <button ng-click="clearService()" class="btn btn-danger btn-xs">x</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <button ng-click="addItem(servicInfo)" class="btn btn-info">+ Добавить строку</button>
+                    </td>
+                    <td colspan="2">
+                        <p>Итого {{(totalPrice() | number:2) + " P"}}</p>
+                        <p>+ НДС {{agentInfo.tax}}% 180 Р</p>
+                        <p>Всего к оплате {{(totalPrice() | number:2) + " P"}}</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-success" ng-click="sendForm(agentInfo,invoiceAll.services)">Далее</button>
+        </form>
+
+    </div>
+</div>

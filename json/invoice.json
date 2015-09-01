@@ -1,0 +1,41 @@
+{
+    "agents":[
+        {
+            "name":"Иванов Иван",
+            "costs":"",
+            "date":1433148339682,
+            "costMeans": 70000,
+            "tax": {
+                "percentage": 20,
+                "sum": 200
+            }
+        },
+        {
+            "name":"Иванов Сергей",
+            "costs":"",
+            "date":1433148339682,
+            "costMeans": 10000,
+            "tax": {
+                "percentage": 18,
+                "sum": 180
+            }
+        }
+    ],
+    "services":[
+        {
+            "name":"Оплата услуги 1",
+            "quantity": 1,
+            "price": 10000
+        },
+        {
+            "name":"Оплата услуги 2",
+            "quantity": 2,
+            "price": 7000
+        },
+        {
+            "name":"Оплата услуги 3",
+            "quantity": 5,
+            "price": 1000
+        }
+    ]
+}
