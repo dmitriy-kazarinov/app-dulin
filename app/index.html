@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appDulin">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App-Dulin</title>
+
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/app/assets/css/reset.css" rel="stylesheet">
+    <link href="/app/assets/css/jquery.toolbar.css" rel="stylesheet">
+    <link href="/app/assets/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="b-nav navbar navbar-inverse" role="navigation">
+
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li><a ui-sref="comment">Comments</a></li>
+                    <li><a ui-sref="invoice">Invoice</a></li>
+                    <li>
+                        <div id="format-toolbar" class="nav__item glyphicon glyphicon-asterisk" toolbar="{content: '#format-toolbar', position: 'bottom', style: 'primary'}">
+                            <div id="toolbar-options" class="hidden">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i></a>
+                                <a href="#"><i class="glyphicon glyphicon-headphones"></i></a>
+                                <a href="#"><i class="glyphicon glyphicon-camera"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <a class="navbar-brand pull-right" href="https://github.com/dulin666">dulin666</a>
+            </nav>
+        </div>
+    </div>
+
+    <div ui-view></div>
+
+</div>
+
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/node_modules/angular/angular.min.js"></script>
+<script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="/node_modules/angular-strap/dist/angular-strap.min.js"></script>
+<script src="/node_modules/angular-strap/dist/angular-strap.tpl.min.js"></script>
+<script src="/app/app.js"></script>
+<script src="/app/services/router.js"></script>
+<script src="/app/services/allComment.js"></script>
+<script src="/app/services/invoiceService.js"></script>
+<script src="/app/services/datePiker.js"></script>
+<script src="/app/services/autoComplete.js"></script>
+<script src="/app/controllers/commentCtrl.js"></script>
+<script src="/app/controllers/formCtrl.js"></script>
+<script src="/app/controllers/invoiceCtrl.js"></script>
+<script src="/app/directives/commentList.js"></script>
+<script src="/app/directives/toolbar.js"></script>
+<script src="/app/assets/scripts/jquery.toolbar.min.js"></script>
+<script src="//code.angularjs.org/1.0.8/i18n/angular-locale_ru-ru.js"></script>
+
+</body>
+</html>

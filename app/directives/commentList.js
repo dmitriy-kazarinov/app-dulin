@@ -7,6 +7,6 @@ appDulin.directive('commentList', function () {
         scope: {
             list: '='
         },
-        templateUrl: '/js/directives/list-directive.html'
+        templateUrl: '/app/directives/list-directive.html'
     }
 });
