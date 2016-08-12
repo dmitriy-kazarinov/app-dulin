@@ -1,0 +1,29 @@
+{
+  "name": "app-dulin",
+  "version": "1.0.0",
+  "description": "angular app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dulin666/app-dulin.git"
+  },
+  "author": "Dmitry Dulin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dulin666/app-dulin/issues"
+  },
+  "homepage": "https://github.com/dulin666/app-dulin#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-strap": "^2.3.9",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "jquery": "^3.1.0",
+    "nodemon": "^1.10.0"
+  }
+}

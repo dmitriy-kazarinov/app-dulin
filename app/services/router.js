@@ -8,37 +8,37 @@ appDulin.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', fu
         $stateProvider
             .state('home', {
                 url: '/home',
-                templateUrl: '/pages/home.html'
+                templateUrl: '/app/views/home.html'
             })
                 .state('home.directive', {
                     url: '/directive',
-                    templateUrl: '/pages/comment-list.html',
+                    templateUrl: '/app/views/comment-list.html',
                     controller: 'commentCtrl'
                 })
                 .state('home.form', {
                     url: '/form',
-                    templateUrl: '/pages/test.html',
+                    templateUrl: '/app/views/test.html',
                     controller: 'formCtrl'
                 })
                 .state('home.news', {
                     url: '/news',
-                    template: '<div class="b-alert alert alert-warning">Мы на вложенной странице news</div>'
+                    template: '<div class="b-alert alert alert-warning">Page news</div>'
                 })
 
             .state('comment', {
                 url: '/comment',
                 views: {
-                    '': { templateUrl: '/pages/comment.html' },
-                    'columnText@comment': { template: '<div class="well">Страница с разным представлением</div>' },
+                    '': { templateUrl: '/app/views/comment.html' },
+                    'columnText@comment': { template: '<div class="well">Different view</div>' },
                     'columnComment@comment': {
-                        templateUrl: '/pages/comment-table.html',
+                        templateUrl: '/app/views/comment-table.html',
                         controller: 'commentCtrl'
                     }
                 }
             })
             .state('invoice', {
                 url: '/invoice',
-                templateUrl: '/pages/invoice.html',
+                templateUrl: '/app/views/invoice.html',
                 controller: 'invoiceCtrl'
             });
         //$locationProvider
