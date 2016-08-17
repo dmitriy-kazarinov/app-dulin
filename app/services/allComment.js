@@ -4,7 +4,7 @@
 appDulin.factory('allComment', ['$http', function($http){
     return {
         get: function(callback){
-            $http.get('/app/json/comments.json').success(function(data) {
+            $http.get('/api/comments').success(function(data) {
                 callback(data);
             });
         }
